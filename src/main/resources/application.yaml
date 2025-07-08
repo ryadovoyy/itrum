@@ -7,10 +7,8 @@ spring:
     password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: none
+    hibernate:
+      ddl-auto: none
   liquibase:
     enabled: ${SPRING_LIQUIBASE_ENABLED}
 
@@ -28,3 +26,4 @@ spring:
     url: jdbc:tc:postgresql:17.5-alpine:///test
     username: test
     password: test
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
